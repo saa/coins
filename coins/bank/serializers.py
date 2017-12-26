@@ -11,4 +11,4 @@ class AccountSerializer(serializers.ModelSerializer):
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Payment
-        fields = ('id', 'account', 'amount', 'to_account', 'from_account', 'direction')
+        fields = ('amount', 'to_account', 'from_account')

@@ -21,6 +21,8 @@ class AccountViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     Return a list of all accounts.
     """
 
+    serializer_class = AccountSerializer
+
     def list(self, request):
         queryset = Account.objects.all()
         serializer = AccountSerializer(queryset, many=True, context={'request': request})
@@ -40,6 +42,8 @@ class PaymentViewSet(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.Ge
     Create a new payment.
     Data: {"from_account": "bob123", "to_account": "alice456", "amount", 100}
     """
+
+    serializer_class = PaymentSerializer
 
     def list(self, request):
         queryset = Payment.objects.all()

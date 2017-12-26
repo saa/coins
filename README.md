@@ -1,6 +1,8 @@
 Simple account/transactions model with a RESTful API
 ----------------------------------------------------
 
+API Docs (http://127.0.0.1:8000/docs)
+
 
 # Requirements
 
@@ -41,7 +43,7 @@ pip install -r requirements.txt
 Got to project dir and run:
 
 ```
-manage.py migrate
+./manage.py migrate
 ./manage.py loaddata accounts
 ```
 
@@ -59,7 +61,6 @@ manage.py migrate
 ```
 ./manage.py runserver
 ```
-
 
 # Manual tests
 
