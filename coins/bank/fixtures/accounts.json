@@ -1,0 +1,22 @@
+[
+  {
+    "model": "bank.account",
+    "pk": 1,
+    "fields": {
+      "id": "bob123",
+      "owner": "bob",
+      "balance": 100,
+      "currency": "PHP"
+    }
+  },
+  {
+    "model": "bank.account",
+    "pk": 2,
+    "fields": {
+      "id": "alice456",
+      "owner": "alice",
+      "balance": 0.01,
+      "currency": "PHP"
+    }
+  }
+]
