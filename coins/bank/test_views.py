@@ -1,8 +1,11 @@
+"""
+Bank unittests for views.
+"""
+
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
-from coins.bank.views import AccountViewSet, PaymentViewSet
-from coins.bank.models import Account, Payment
+from coins.bank.models import Account
 
 
 class AccountViewSet(APITestCase):

@@ -1,9 +1,13 @@
+"""
+Bank views.
+"""
+
+from decimal import Decimal
 from django.db import transaction
 from django.db import IntegrityError
 from rest_framework import viewsets, mixins
 from rest_framework.response import Response
 from rest_framework import status
-from decimal import Decimal
 from coins.bank.models import Account, Payment
 from coins.bank.serializers import AccountSerializer, PaymentSerializer
 

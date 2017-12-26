@@ -1,9 +1,16 @@
+"""
+Unittests for Bank models.
+"""
+
 from django.test import TestCase
 from coins.bank.models import Account, Payment
 from coins.bank.views import INCOMING, OUTGOING
 
 
 class AccountTestCase(TestCase):
+    """
+    Test Account model.
+    """
     def setUp(self):
         Account.objects.create(id="test11", owner="test1", balance=10, currency="PHP")
         Account.objects.create(id="test21", owner="test2", balance=10, currency="PHP")
@@ -17,6 +24,9 @@ class AccountTestCase(TestCase):
 
 
 class PaymentTestCase(TestCase):
+    """
+    Test Payment model.
+    """
     def setUp(self):
         test1 = Account.objects.create(id="test11", owner="test1", balance=10, currency="PHP")
         test2 = Account.objects.create(id="test21", owner="test2", balance=10, currency="PHP")

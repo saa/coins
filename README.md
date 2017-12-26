@@ -62,6 +62,14 @@ Got to project dir and run:
 ./manage.py runserver
 ```
 
+# Lint project
+
+Got to project dir and run:
+
+```
+pylint --load-plugins pylint_django coins
+```
+
 # Manual tests
 
 ### Get list of accounts:
