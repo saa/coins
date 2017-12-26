@@ -10,10 +10,9 @@ Simple account/transactions model with a RESTful API
 
 ### PostgreSQL:
 
- 1. Create user `coins` with password `coins`: `CREATE USER coins WITH password 'coins';`
- 2. Create database coins: `CREATE DATABASE coins;`
- 3. Grant: `GRANT ALL ON DATABASE coins TO coins;`
- 4. Grant createdb: `ALTER USER coins WITH createdb;`
+```
+psql < pg.sql
+```
 
 # Build project
 
@@ -37,12 +36,13 @@ source /tmp/coins-env/bin/activate
 pip install -r requirements.txt
 ```
 
-### Run migration
+### Run migration and load fixtures
 
 Got to project dir and run:
 
 ```
 manage.py migrate
+./manage.py loaddata accounts
 ```
 
 
@@ -58,4 +58,25 @@ manage.py migrate
 
 ```
 ./manage.py runserver
+```
+
+
+# Manual tests
+
+### Get list of accounts:
+
+```
+curl http://127.0.0.1:8000/v1/accounts
+```
+
+### Create payment
+
+```
+curl -X POST -H 'content-type: application/json' -d '{"from_account": "bob123", "to_account": "alice456", "amount": 100}' http://127.0.0.1:8000/v1/payments
+```
+
+### Get list of payments
+
+```
+curl http://127.0.0.1:8000/v1/accounts
 ```
